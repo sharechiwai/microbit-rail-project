@@ -15,10 +15,18 @@ function showStation () {
     I2C_LCD1602.ShowString("Shui Kau Station", 0, 1)
 }
 input.onButtonPressed(Button.A, function () {
-    strip.showColor(neopixel.colors(NeoPixelColors.Red))
+    strip.showColor(neopixel.colors(NeoPixelColors.White))
 })
 input.onButtonPressed(Button.B, function () {
     strip.showColor(neopixel.colors(NeoPixelColors.Black))
+})
+radio.onReceivedValue(function (name, value) {
+    if (name == "arrived") {
+        basic.pause(10000)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+        basic.pause(10000)
+        strip.showColor(neopixel.colors(NeoPixelColors.White))
+    }
 })
 let strip: neopixel.Strip = null
 radio.setGroup(1)
