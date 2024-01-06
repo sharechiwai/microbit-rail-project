@@ -35,5 +35,4 @@ basic.forever(function () {
     basic.pause(3000)
 })
 
-
 ```
