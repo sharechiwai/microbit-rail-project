@@ -1,3 +1,14 @@
+## Main Station
+
+- Display "Hung Shui Kai Station"
+- Operation
+  - LED light on to make trigger `Train` LED light sensor to detect and trigger stop train action
+  - Receive "arrived" message from `broadcast` to trigger a timer to stop LED light,
+    - when LED off and the `Train` will start moving again
+- 
+
+
+
 ```javascript
 function showStation () {
     I2C_LCD1602.ShowString("Welcome to Hung", 16, 0)
